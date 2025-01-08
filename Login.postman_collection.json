@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "baa08bfc-2802-4275-8f50-43e0f4b43d9f",
+		"name": "Login",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25712201",
+		"_collection_link": "https://www.postman.com/lunar-module-candidate-11877083/workspace/hudud-elektr-tarmoqlari/collection/25712201-baa08bfc-2802-4275-8f50-43e0f4b43d9f?action=share&source=collection_link&creator=25712201"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"pm.test(\"Verify the response body\", function () {\r",
+							"    pm.expect(response).to.have.property(\"accessToken\");\r",
+							"    pm.expect(response).to.have.property(\"refreshToken\");\r",
+							"    pm.expect(response).to.have.property(\"tokenType\");\r",
+							"    pm.expect(response).to.have.property(\"expiresIn\");\r",
+							"    pm.expect(response).to.have.property(\"refreshExpiresIn\");\r",
+							"    pm.expect(response).to.have.property(\"code\");\r",
+							"    pm.expect(response).to.have.property(\"coatoCode\");\r",
+							"    pm.expect(response).to.have.property(\"positionId\");\r",
+							"    pm.expect(response).to.have.property(\"firstName\");\r",
+							"    pm.expect(response).to.have.property(\"lastName\");\r",
+							"    pm.expect(response).to.have.property(\"middleName\");\r",
+							"    pm.expect(response).to.have.property(\"login\");\r",
+							"    pm.expect(response).to.have.property(\"languageId\");\r",
+							"    pm.expect(response).to.have.property(\"status\");\r",
+							"    pm.expect(response).to.have.property(\"isERIRequired\");\r",
+							"  \r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Resource",
+						"value": "/sign-in"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "Action",
+						"value": ""
+					},
+					{
+						"key": "Lang",
+						"value": "RU"
+					},
+					{
+						"key": "Referer",
+						"value": "https://hetstable.xdevs.uz/"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"login\":\"admin\",\r\n\"password\":\"pwxirGn1oEWWUv0!\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domenStable}}/user-management/v1/user/login",
+					"host": [
+						"{{domenStable}}"
+					],
+					"path": [
+						"user-management",
+						"v1",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBeEtsZld2b3R1YXZLMmwwUHdoYUtMb29RT0RvaUlkamFyMXlDRWJCWTVFIn0.eyJleHAiOjE3MzYzMjgzMjMsImlhdCI6MTczNjMxNzUyMywianRpIjoiZjAyZjc1ODYtN2M2MS00MzI0LTkxMTAtMWQ2YmMzMzJiOGE3IiwiaXNzIjoiaHR0cDovLzE5Mi4xNjguMjUuNTc6ODA4MC9yZWFsbXMvSGV0S2V5Y2xvYWsiLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImJyb2tlciIsImFjY291bnQiXSwic3ViIjoiZjhlNmFhZWItNDA4OC00MjhjLTg0ZmItY2M0MDgwZTk2NjZiIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiaGV0LWxvZ2luIiwic2Vzc2lvbl9zdGF0ZSI6ImIxMjc0NGYzLWNjZTYtNDZhNC05M2FiLWQyMDE1YjdmZjdlMCIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiMTAxNzlcciIsIjEwMTQ2XHIiLCJzdXBlci1hZG1pbiIsImRlZmF1bHQtcm9sZXMtaGV0a2V5Y2xvYWsiXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbInZpZXctaWRlbnRpdHktcHJvdmlkZXJzIiwidmlldy1yZWFsbSIsIm1hbmFnZS1pZGVudGl0eS1wcm92aWRlcnMiLCJpbXBlcnNvbmF0aW9uIiwicmVhbG0tYWRtaW4iLCJjcmVhdGUtY2xpZW50IiwibWFuYWdlLXVzZXJzIiwicXVlcnktcmVhbG1zIiwidmlldy1hdXRob3JpemF0aW9uIiwicXVlcnktY2xpZW50cyIsInF1ZXJ5LXVzZXJzIiwibWFuYWdlLWV2ZW50cyIsIm1hbmFnZS1yZWFsbSIsInZpZXctZXZlbnRzIiwidmlldy11c2VycyIsInZpZXctY2xpZW50cyIsIm1hbmFnZS1hdXRob3JpemF0aW9uIiwibWFuYWdlLWNsaWVudHMiLCJxdWVyeS1ncm91cHMiXX0sImhldC1sb2dpbiI6eyJyb2xlcyI6WyJyZWFsbS1jdXN0b20tcm9sZSIsInVtYV9wcm90ZWN0aW9uIl19LCJicm9rZXIiOnsicm9sZXMiOlsicmVhZC10b2tlbiJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsInZpZXctYXBwbGljYXRpb25zIiwidmlldy1jb25zZW50Iiwidmlldy1ncm91cHMiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsIm1hbmFnZS1jb25zZW50IiwiZGVsZXRlLWFjY291bnQiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHBob25lIHByb2ZpbGUiLCJzaWQiOiJiMTI3NDRmMy1jY2U2LTQ2YTQtOTNhYi1kMjAxNWI3ZmY3ZTAiLCJ1cG4iOiJhZG1pbiIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiYWRkcmVzcyI6e30sInVzZXJfaWQiOiIwIiwiY29hdG9fY29kZSI6IjAwMDAwIiwibmFtZSI6Ii0gQURNSU4iLCJncm91cHMiOlsic3VwZXItYWRtaW4iLCIxMDE3OVxyIiwiMTAxNDZcciIsInN1cGVyLWFkbWluIiwiZGVmYXVsdC1yb2xlcy1oZXRrZXljbG9hayJdLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiIsImdpdmVuX25hbWUiOiItIiwiZmFtaWx5X25hbWUiOiJBRE1JTiJ9.mmxjhgpwMMkPJQaUmgxy1qh5CQyJ0Nb2frhnPvEk8JT7qM77S6CsnD8QJlvDOJW_EBodrvyrPIuOQTzGRXDZdpzfOuGXVrG0EejGltX3ExCzwu_okIGpc61PReJRAd5V9ReKaeQOmVS-OsfsFZmvOSYsELNZVba3-HmS1vLnYq_GTk9Lk77eKtGgJiNIqqroHrKoi9s9Xjg1_udqY61_sJD32thotu2J6xOcMEjFyf-rrv-eRfpe02VzGwIhVzoJ5a-7QaEmPVPkzYpFG2ZDuC7q-wT7hUOzS9ZsebTfuijWajNAoWnTeeaqh4BM6KgCux92IEYZtRDwzTVvB2qYbg",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

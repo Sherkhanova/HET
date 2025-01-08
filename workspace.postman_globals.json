@@ -1,0 +1,14 @@
+{
+	"id": "65903dfd-0fc7-4626-8f9f-72ff79da94af",
+	"values": [
+		{
+			"key": "domenStable",
+			"value": "https://hetstable-web-api.xdevs.uz",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2025-01-08T06:29:54.385Z",
+	"_postman_exported_using": "Postman/11.23.3"
+}
